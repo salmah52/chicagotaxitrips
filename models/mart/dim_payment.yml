@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_payment
+    description: >
+      This model extracts payment information from the taxi trips data
+      and generates a unique payment_id using the row number.
+
+    columns:
+      - name: payment_id
+        description: "Unique identifier for each payment record."
+        tests:
+          - not_null
+          - unique
+
+      - name: payment_type
+        description: "Type of payment for the trip."
+        tests:
+          - not_null

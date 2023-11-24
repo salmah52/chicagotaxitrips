@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: >
+      This model extracts date and time components from the trip start and end timestamps
+      and creates a datetime dimension table.
+    columns:
+      - name: datetime_id
+        description: "Unique identifier for each record in the datetime dimension."
+        tests:
+          - not_null
+          - unique
+
+      - name: start_trip
+        description: "The timestamp when the trip started."
+        tests:
+          - not_null
+
+      - name: end_trip
+        description: "The timestamp when the trip ended."
+        tests:
+          - not_null
+
+      - name: start_hour
+        description: "Hour when the trip started."
+        tests:
+          - not_null
+
+      - name: start_day
+        description: "Day of the month when the trip started."
+        tests:
+          - not_null
+
+      - name: start_month
+        description: "Month when the trip started."
+        tests:
+          - not_null
+
+      - name: start_year
+        description: "Year when the trip started."
+        tests:
+          - not_null
+
+      - name: start_weekend
+        description: "Indicates whether the trip started on a weekend or weekday."
+        tests:
+          - not_null
+
+      - name: start_quarter
+        description: "Quarter of the year when the trip started."
+        tests:
+          - not_null
+
+      - name: start_season
+        description: "Season when the trip started (Winter, Spring, Summer, Fall)."
+        tests:
+          - not_null
+
+      - name: end_hour
+        description: "Hour when the trip ended."
+        tests:
+          - not_null
+
+      - name: end_day
+        description: "Day of the month when the trip ended."
+        tests:
+          - not_null
+
+      - name: end_month
+        description: "Month when the trip ended."
+        tests:
+          - not_null
+
+      - name: end_year
+        description: "Year when the trip ended."
+        tests:
+          - not_null
+
+      - name: end_weekend
+        description: "Indicates whether the trip ended on a weekend or weekday."
+        tests:
+          - not_null
+
+      - name: end_quarter
+        description: "Quarter of the year when the trip ended."
+        tests:
+          - not_null
+
+      - name: end_season
+        description: "Season when the trip ended (Winter, Spring, Summer, Fall)."
+        tests:
+          - not_null

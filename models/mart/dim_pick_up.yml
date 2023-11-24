@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_pick_up
+    description: >
+      This model extracts information about the pick-up location from the taxi trips data
+      and generates a unique pick_up_id using a hash function.
+
+    columns:
+
+      - name: pick_up_id
+        description: "Unique identifier for each pick-up location record."
+        tests:
+          - not_null
+          - unique
+
+      - name: community_area
+        description: "The community area of the pick-up location."
+        tests:
+          - not_null
+
+      - name: latitude
+        description: "The latitude of the pick-up location."
+       
+
+      - name: longitude
+        description: "The longitude of the pick-up location."
+      
+
+      - name: location_name
+        description: "The name of the pick-up location."
+        
+
+      - name: census_tract
+        description: "The census tract of the pick-up location."
+      
+
+    

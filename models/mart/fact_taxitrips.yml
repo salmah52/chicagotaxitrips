@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: fact_taxitrips
+    description: >
+      This model represents the fact table for taxi trips, including information
+      from various dimensions.
+
+    columns:
+      - name: trip_id
+        description: "Unique identifier for each taxi trip."
+        tests:
+          - not_null
+          - unique
+
+      - name: taxi_id
+        description: "Unique identifier for the taxi."
+        tests:
+          - not_null
+
+      - name: fare
+        description: "The fare for the trip."
+        
+          
+
+      - name: tips
+        description: "The tip for the trip. Cash tips generally will not be recorded."
+      
+
+      - name: trip_seconds
+        description: "Time of the trip in seconds."
+      
+      - name: trip_miles
+        description: "Distance of the trip in miles."
+      
+      - name: tolls
+        description: "The tolls for the trip."
+        
+      - name: extras
+        description: "Extra charges for the trip."
+     
+
+      - name: trip_total
+        description: "Total cost of the trip, the total of the previous columns."
+       
+      - name: company
+        description: "The taxi company."
+       
+
+      - name: datetime_id
+        description: "Unique identifier for date and time."
+        tests:
+          - not_null
+          - unique
+
+      - name: pick_up_id
+        description: "Unique identifier for pick-up location."
+        tests:
+          - not_null
+          - unique
+
+      - name: drop_off_id
+        description: "Unique identifier for drop-off location."
+        tests:
+          - not_null
+          - unique
+
+      - name: payment_id
+        description: "Unique identifier for payment."
+        tests:
+          - not_null
+          - unique

@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_drop_off
+    description: >
+      This model extracts information about the drop_off location from the taxi trips data
+      and generates a unique drop_off_id using a hash function.
+
+    columns:
+
+      - name: drop_off_id
+        description: "Unique identifier for each drop_off location record."
+        tests:
+          - not_null
+          - unique
+
+      - name: community_area
+        description: "The community area of the drop_off location."
+      
+
+      - name: latitude
+        description: "The latitude of the drop_off location."
+       
+
+      - name: longitude
+        description: "The longitude of the drop_off location."
+      
+
+      - name: location_name
+        description: "The name of the drop_off location."
+        
+
+      - name: census_tract
+        description: "The census tract of the drop_off location."
+      
+
+    

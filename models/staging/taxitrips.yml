@@ -1,0 +1,10 @@
+version: 2
+
+
+sources:
+  - name: maintaxitrips009
+    database: fleet-space-403010
+    schema: maintaxitrips009
+    tables:
+      - name: raw_data_table
+     
