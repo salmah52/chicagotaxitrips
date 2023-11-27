@@ -42,27 +42,29 @@ A robust data architecture is crucial for ensuring data quality, integrity, and 
 **Columns** - 23
 
 # Project Stages:
-1. Data Extraction and Loading (Extract and Load Pipeline):
+
+## Data Extraction and Loading (Extract and Load Pipeline):
    
 # Code Explanation - Data Extraction and Loading
-Code 1: TaxitripsToPostgresOperator
+# TaxitripsToPostgresOperator
 This code defines a custom Airflow Operator (TaxitripsToPostgresOperator) responsible for extracting data from the Chicago taxi trips API and loading it into a PostgreSQL database. Let's break down the key components:
 
-Initialization: The constructor (__init__ method) initializes various parameters, including the API details, PostgreSQL connection ID, table name, and other configuration options.
+1. Initialization: The constructor (__init__ method) initializes various parameters, including the API details, PostgreSQL connection ID, table name, and other configuration options.
 
-Execution Method (execute):
+2. Execution Method (execute):
 
 Constructs the API URL based on the provided endpoint.
-Sets up parameters for the API request, including limit and order.
-Sends a GET request to the API with proper headers and parameters.
-Checks for errors in the API response.
-If the response is successful (status code 200), converts the JSON data to a Pandas DataFrame and drops unnecessary columns (pickup_centroid_location and dropoff_centroid_location).
-Logs information about the data extraction.
-Uses SQLAlchemy to send the processed DataFrame to the PostgreSQL database.
-Code 2: Airflow DAG Definition
+- Sets up parameters for the API request, including limit and order.
+- Sends a GET request to the API with proper headers and parameters.
+- Checks for errors in the API response.
+- If the response is successful (status code 200), converts the JSON data to a Pandas DataFrame and drops unnecessary columns (pickup_centroid_location and dropoff_centroid_location).
+- Logs information about the data extraction.
+- Uses SQLAlchemy to send the processed DataFrame to the PostgreSQL database.
+
+3. Airflow DAG Definition
 This code defines an Airflow Directed Acyclic Graph (DAG) to orchestrate the data extraction and loading process. Key details include:
 
-DAG Configuration (dag):
+- DAG Configuration (dag):
 
 Sets default arguments, including owner, start date, and retry policies.
 Defines the DAG with a unique identifier ('taxitrips_extraction_dag0009'), a description, and a schedule interval (every day in this case).
