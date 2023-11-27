@@ -154,6 +154,11 @@ These Metrics models provide valuable insights into revenue trends, average reve
    - Popular Pickup and Drop-off Locations: Identifies the most popular locations for pickups and drop-offs.
    - Distance Covered by Taxis: Calculates the total distance covered by taxis.
    - Heatmap of Trip Densities in Different Areas: Visualizes trip densities in various geographical areas.
+  
+# Lineage Graph
+
+
+![Lineage Graph]("https://github.com/salmah52/chicagotaxitrips/assets/44398948/f4563fc6-4807-4fb5-bc01-391a9c6357db")
 
 ### Tests
 
