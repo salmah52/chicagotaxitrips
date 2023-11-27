@@ -82,6 +82,12 @@ This code defines an Airflow Directed Acyclic Graph (DAG) to orchestrate the dat
 
 This is an overview of the dbt (data build tool) project for the Chicago Taxi Trips dataset. The project follows a dimensional modeling approach to transform raw data into a structured analytics-ready format. The primary objectives include creating dimension and fact tables, generating diverse metrics, and implementing tests for data accuracy and reliability.
 
+
+## Data Modelling
+
+
+<img width="623" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/7c934379-7e29-4978-9bd7-853c7a82889b">
+
 ### Project Structure
 
 The dbt project is organized into the following directories:
