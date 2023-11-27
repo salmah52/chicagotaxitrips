@@ -23,6 +23,7 @@ dag = DAG(
     'taxitrips_extraction_dag00099',
     default_args=default_args,
     description='DAG to extract data from Chicago taxi trips API and load into PostgreSQL',
+    start_date=datetime(2023, 11, 27),
     schedule_interval=timedelta(days=1),  # Adjust the schedule as needed
 )
 
@@ -71,6 +72,13 @@ gcs_to_bigquery_task = GCSToBigQueryOperator(
   
     dag=dag,
 )
+trigger_job_run = DbtCloudRunJobOperator(
+        task_id="trigger_job_run",
+        dbt_cloud_conn_id = "dbt_conn", 
+        job_id=464367,
+        check_interval=10,
+        timeout=300,
+    )
 end_task = DummyOperator(
     task_id='end_task',
     dag=dag,
@@ -78,6 +86,5 @@ end_task = DummyOperator(
 
 
 # Set up task dependencies
-start_task >> extract_and_load_task >> postgres_to_gcs_task >> gcs_to_bigquery_task >> end_task
-
+start_task >> extract_and_load_task >> postgres_to_gcs_task >> gcs_to_bigquery_task  >> trigger_job_run >> end_task
 
