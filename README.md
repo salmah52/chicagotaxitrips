@@ -11,9 +11,7 @@ This project focuses on building a comprehensive Extract, Load, Transform (ELT) 
 
 A robust data architecture is crucial for ensuring data quality, integrity, and accessibility. Here's the architecture for your Eviction Notices Data Pipeline:
 
-![Data Architecture]("https://github.com/salmah52/chicagotaxitrips/assets/44398948/3389d5d5-a2fa-4707-907a-e6d4f94081b8")
-
-<img width="1076" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/0b08ff25-7c0c-49f8-b31b-486a3ce3f543">
+![Data Architecture]("https://github.com/salmah52/chicagotaxitrips/assets/44398948/cd0f92d6-4158-408b-92c7-e9487eda8333")
 
 
 1. **Data Source:**
