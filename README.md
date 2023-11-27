@@ -160,8 +160,8 @@ These Metrics models provide valuable insights into revenue trends, average reve
   
 # Lineage Graph
 
+<img width="1076" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/0b08ff25-7c0c-49f8-b31b-486a3ce3f543">
 
-![Lineage Graph]("https://github.com/salmah52/chicagotaxitrips/assets/44398948/f4563fc6-4807-4fb5-bc01-391a9c6357db")
 
 ### Tests
 
