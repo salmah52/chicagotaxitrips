@@ -195,6 +195,11 @@ These Metrics models provide valuable insights into revenue trends, average reve
 
 2. **Metric Accuracy Tests (metric_accuracy_tests):**
    - Validates the accuracy of calculated metrics in revenue, usage, customer, and geospatial models.
+  
+## dbtCloudJobRunOperator 
+
+<img width="1124" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/4cbd00c7-f9f1-43bd-abdc-f9f23c496923">
+
 
 ## Why This Approach
 
