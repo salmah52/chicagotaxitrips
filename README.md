@@ -45,8 +45,8 @@ A robust data architecture is crucial for ensuring data quality, integrity, and 
 
 ## Data Extraction and Loading (Extract and Load Pipeline):
    
-# Code Explanation - Data Extraction and Loading
-# TaxitripsToPostgresOperator
+Code Explanation - Data Extraction and Loading
+TaxitripsToPostgresOperator
 This code defines a custom Airflow Operator (TaxitripsToPostgresOperator) responsible for extracting data from the Chicago taxi trips API and loading it into a PostgreSQL database. Let's break down the key components:
 
 1. Initialization: The constructor (__init__ method) initializes various parameters, including the API details, PostgreSQL connection ID, table name, and other configuration options.
