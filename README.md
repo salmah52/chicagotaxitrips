@@ -43,7 +43,7 @@ A robust data architecture is crucial for ensuring data quality, integrity, and 
 
 # Project Stages:
 
-## Data Extraction and Loading (Extract and Load Pipeline):
+1. Data Extraction and Loading (Extract and Load Pipeline)
    
 Code Explanation - Data Extraction and Loading
 TaxitripsToPostgresOperator
