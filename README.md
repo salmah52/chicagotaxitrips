@@ -43,31 +43,26 @@ A robust data architecture is crucial for ensuring data quality, integrity, and 
 
 # Project Stages:
 
-1. Data Extraction and Loading (Extract and Load Pipeline)
+## Data Extraction and Loading (Extract and Load Pipeline)-
    
-Code Explanation - Data Extraction and Loading
-TaxitripsToPostgresOperator
-This code defines a custom Airflow Operator (TaxitripsToPostgresOperator) responsible for extracting data from the Chicago taxi trips API and loading it into a PostgreSQL database. Let's break down the key components:
+Code Explanation - This code defines a custom Airflow Operator (TaxitripsToPostgresOperator) responsible for extracting data from the Chicago taxi trips API and loading it into a PostgreSQL database. Let's break down the key components:
 
-1. Initialization: The constructor (__init__ method) initializes various parameters, including the API details, PostgreSQL connection ID, table name, and other configuration options.
-
-2. Execution Method (execute):
-
+- Initialization: The constructor (__init__ method) initializes various parameters, including the API details, PostgreSQL connection ID, table name, and other configuration options.
+- Execution Method (execute):
 Constructs the API URL based on the provided endpoint.
-- Sets up parameters for the API request, including limit and order.
-- Sends a GET request to the API with proper headers and parameters.
-- Checks for errors in the API response.
-- If the response is successful (status code 200), converts the JSON data to a Pandas DataFrame and drops unnecessary columns (pickup_centroid_location and dropoff_centroid_location).
-- Logs information about the data extraction.
-- Uses SQLAlchemy to send the processed DataFrame to the PostgreSQL database.
+i. Sets up parameters for the API request, including limit and order.
+ii. Sends a GET request to the API with proper headers and parameters.
+iii. Checks for errors in the API response.
+iv. If the response is successful (status code 200), converts the JSON data to a Pandas DataFrame and drops unnecessary columns (pickup_centroid_location and dropoff_centroid_location).
+v. Logs information about the data extraction.
+vi. Uses SQLAlchemy to send the processed DataFrame to the PostgreSQL database.
 
-3. Airflow DAG Definition
+- Airflow DAG Definition
 This code defines an Airflow Directed Acyclic Graph (DAG) to orchestrate the data extraction and loading process. Key details include:
 
 - DAG Configuration (dag):
 
-Sets default arguments, including owner, start date, and retry policies.
-Defines the DAG with a unique identifier ('taxitrips_extraction_dag0009'), a description, and a schedule interval (every day in this case).
+- Defines the DAG with a unique identifier ('taxitrips_extraction_dag0009'), a description, and a schedule interval (every day in this case).
 Tasks:
 
 start_task: A dummy task marking the start of the DAG.
@@ -75,7 +70,10 @@ extract_and_load_task: An instance of the TaxitripsToPostgresOperator representi
 end_task: Another dummy task marking the end of the DAG.
 Task Dependencies (start_task >> extract_and_load_task >> end_task):
 
-Specifies the order in which tasks should be executed. In this case, the DAG starts with start_task, followed by extract_and_load_task, and finally end_task.
+- Specifies the order in which tasks should be executed. In this case, the DAG starts with start_task, followed by extract_and_load_task, and finally end_task.
+
+
+  
 Why This Approach?
 Custom Operator: The custom operator encapsulates the logic for data extraction and loading, promoting reusability and readability.
 
@@ -91,44 +89,8 @@ This design promotes modularity, making it easy to extend the pipeline for futur
  
 
 
-This capstone project aims to design and implement a robust data pipeline using various technologies and 
-tools. The goal is to extract data from a choser any other 
-suitable dataset accessible via API), transform it, and load it into a structured data warehouse for further 
-analysis and reporting
-1. Data Extraction and Loading (Extract and Load Pipeline)
-Objective: Utilize custom-built Airflow Hooks and Operators to connect with the selected API and create a pipeline for extracting data from the API endpoint. The extracted data will be loaded into a PostgreSQL database.
 
-Components:
-
-Airflow Hooks and Operators: Custom-built components that facilitate the interaction between Airflow and the API as well as the PostgreSQL database.
-
-DAG (Directed Acyclic Graph): An Airflow DAG named taxitrips_extraction_dag is created to orchestrate the ETL workflow.
-
-Tasks:
-
-Create Table Task (create_table): A task responsible for creating the PostgreSQL table if it does not exist. Uses the PostgresOperator to execute SQL commands.
-
-Extract and Load Task (extract_and_load): A task using a custom TaxitripsToPostgresOperator to fetch data from the API, transform it, and load it into the PostgreSQL table.
-
-Dependencies:
-
-The extract_and_load task depends on the successful completion of the create_table task.
-Configuration:
-
-The API endpoint, API token, PostgreSQL connection details, and other parameters are configured in the Airflow DAG and the custom operator (TaxitripsToPostgresOperator).
-
-Retry and timeout configurations are set to handle potential issues during data extraction.
-
-2. Data Transformation and Integration (ELT Pipeline)
-Objective: Implement an ELT pipeline to transfer data from the PostgreSQL database to a Google Cloud Storage (GCS) data lake. Further move data from GCS to Google BigQuery for enhanced analytics capabilities.
-
-Components:
-
-Custom ELT Operators: Develop custom operators to perform data extraction from PostgreSQL, storage in GCS, and loading into Google BigQuery.
-
-DAG Configuration: Extend the existing Airflow DAG (taxitrips_extraction_dag) to incorporate ELT tasks.
-
-3. Transformation Layer and Analytics Modeling (dbt Implementation)
+## Transformation Layer and Analytics Modeling (dbt Implementation)
 Objective: Develop a transformation layer using dbt (data build tool) with diverse metrics, aligning with staging, intermediate, and final (mart) models. Adopt the star schema or Kimball's model for effective data modeling in the transformation layer, referencing the provided model diagram. Create at least two analytics metrics models in dbt, demonstrating their value addition to analytics.
 
 Components:
