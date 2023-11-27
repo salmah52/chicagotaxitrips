@@ -91,23 +91,8 @@ This design promotes modularity, making it easy to extend the pipeline for futur
 
 
 ## Transformation Layer and Analytics Modeling (dbt Implementation)
-Objective: Develop a transformation layer using dbt (data build tool) with diverse metrics, aligning with staging, intermediate, and final (mart) models. Adopt the star schema or Kimball's model for effective data modeling in the transformation layer, referencing the provided model diagram. Create at least two analytics metrics models in dbt, demonstrating their value addition to analytics.
 
-Components:
-
-dbt Models: Implement dbt models based on the provided data modeling strategy.
-
-Star Schema or Kimball's Model: Adopt a suitable data modeling approach for effective analytics.
-
-DAG Configuration:
-
-Add tasks to the Airflow DAG (taxitrips_extraction_dag) to trigger dbt runs after the ELT pipeline.
-
-## dbt Project Documentation
-
-### Overview
-
-This documentation provides an overview of the dbt (data build tool) project for the Chicago Taxi Trips dataset. The project follows a dimensional modeling approach to transform raw data into a structured analytics-ready format. The primary objectives include creating dimension and fact tables, generating diverse metrics, and implementing tests for data accuracy and reliability.
+Thiis is the overview of the dbt (data build tool) project for the Chicago Taxi Trips dataset. The project follows a dimensional modeling approach to transform raw data into a structured analytics-ready format. The primary objectives include creating dimension and fact tables, generating diverse metrics, and implementing tests for data accuracy and reliability.
 
 ### Project Structure
 
@@ -138,6 +123,9 @@ The staging model stg_taxitrips is responsible for ingesting and staging raw dat
 
 4. **dim_pick_up Model:**
    Extracts information related to pick-up locations, including community area, latitude, longitude, location name, and census tract.
+
+5. **dim_COMPANY:**
+   Extracts information related to company.
 
 **Facts:**
 
@@ -182,6 +170,20 @@ The staging model stg_taxitrips is responsible for ingesting and staging raw dat
 
 2. **Metric Accuracy Tests (metric_accuracy_tests):**
    - Validates the accuracy of calculated metrics in revenue, usage, customer, and geospatial models.
+
+
+##  Why This Approach?
+- Custom Operator: The custom operator encapsulates the logic for data extraction and loading, promoting reusability and readability.
+
+- Pandas DataFrame: Leveraging Pandas allows for convenient data manipulation and transformation before loading it into PostgreSQL.
+
+- Dynamic API Configuration: The operator is configurable, allowing users to specify API details, order, and other parameters during instantiation.
+
+- Airflow DAG: The DAG orchestrates the entire process, defining the sequence of tasks to be executed.
+
+- Docker-Ready: This approach is containerization-friendly, ensuring easy deployment and scalability in a Dockerized environment.
+
+This design promotes modularity, making it easy to extend the pipeline for future stages and modifications. The DAG provides a visual representation of the workflow, making it comprehensible and adaptable to changing requirements.
 
 
 ## Conclusion
