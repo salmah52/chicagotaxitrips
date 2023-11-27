@@ -13,8 +13,10 @@ A robust data architecture is crucial for ensuring data quality, integrity, and 
 
 <img width="632" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/23b0c8ad-dfb2-4f04-88f7-e29c13b95100">
 
+![Data Modelling](https://github.com/salmah52/chicagotaxitrips/assets/44398948/7c934379-7e29-4978-9bd7-853c7a82889b")
 
-![Data Architecture]("https://github.com/salmah52/chicagotaxitrips/assets/44398948/cd0f92d6-4158-408b-92c7-e9487eda8333")
+
+![Data Architecture](https://github.com/salmah52/chicagotaxitrips/assets/44398948/cd0f92d6-4158-408b-92c7-e9487eda8333")
 
 
 1. **Data Source:**
