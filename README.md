@@ -128,6 +128,8 @@ The staging model stg_taxitrips is responsible for ingesting and staging raw dat
 
 ### Metrics Modeling
 
+These Metrics models provide valuable insights into revenue trends, average revenue per trip, customer retention rates, and customer segmentation based on usage patterns.
+
 **Metrics Models:**
 
 1. **Revenue Metrics Model (revenue_metrics):**
