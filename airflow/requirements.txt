@@ -1,0 +1,9 @@
+xmltodict==0.13.0
+requests==2.26.0
+pendulum==2.1.2
+apache-airflow-providers-google
+apache-airflow-providers-http
+apache-airflow-providers-dbt-cloud
+google-cloud-storage
+pyarrow
+
