@@ -46,7 +46,7 @@ A robust data architecture is crucial for ensuring data quality, integrity, and 
 
 # Project Stages
 
-## Data Extraction and Loading (Extract and Load Pipeline)
+## STEP1- Data Extraction and Loading (Extract and Load Pipeline)
 
 ### Code Explanation
 
@@ -84,18 +84,25 @@ This code defines an Airflow Directed Acyclic Graph (DAG) to orchestrate the dat
 
 ![image](https://github.com/salmah52/chicagotaxitrips/assets/44398948/80d4d65b-4389-4dc7-af03-d5b3a2968778)
 
-GCS
+# GCS Bucket
 
 <img width="927" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/71d78b2e-5ad1-4989-a393-78e4196f28a4">
 
+## STEP 2- Data Transformation and Integration (ELT Pipeline):
+
+transferring data from a PostgreSQL database to Google Cloud Storage (GCS) as a data lake and subsequently loading it into Google BigQuery for advanced analytics.
+
+# Dags
+
+![image](https://github.com/salmah52/chicagotaxitrips/assets/44398948/501ab48b-fa86-4cc7-bcc7-6ceab5ed2a71)
+
+# Bigquery
+
+![image](https://github.com/salmah52/chicagotaxitrips/assets/44398948/4e1ed0ce-b010-4b0f-9d8e-b24b0314afc1)
 
 
 
-
-
-
-
-## Transformation Layer and Analytics Modeling (dbt Implementation)
+## STEP 3- Transformation Layer and Analytics Modeling (dbt Implementation)
 
 This is an overview of the dbt (data build tool) project for the Chicago Taxi Trips dataset. The project follows a dimensional modeling approach to transform raw data into a structured analytics-ready format. The primary objectives include creating dimension and fact tables, generating diverse metrics, and implementing tests for data accuracy and reliability.
 
