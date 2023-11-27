@@ -9,7 +9,7 @@ WITH fact_taxitrips AS (
         CAST(FLOOR(CAST(REGEXP_REPLACE(trip_total, r'[$,]', '') AS FLOAT64)) AS INTEGER) AS trip_total,
         CAST(FLOOR(CAST(trip_seconds AS FLOAT64)) AS INTEGER) AS trip_seconds,
         CAST(FLOOR(CAST(trip_miles AS FLOAT64)) AS INTEGER) AS trip_miles,
-        company,
+        
         
         ROW_NUMBER() OVER () AS t_id
     FROM 
@@ -26,7 +26,6 @@ SELECT
     f.trip_total as trip_total,
     f.trip_seconds,
     f.trip_miles,
-    f.company as company,
     d.datetime_id as datetime_id,
     p.pick_up_id as pick_up_id,
     dd.drop_off_id as drop_off_id,
