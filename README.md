@@ -86,7 +86,7 @@ This is an overview of the dbt (data build tool) project for the Chicago Taxi Tr
 ## Data Modelling
 
 ![Data Modelling](https://github.com/salmah52/chicagotaxitrips/assets/44398948/7c934379-7e29-4978-9bd7-853c7a82889b")
-<img width="623" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/7c934379-7e29-4978-9bd7-853c7a82889b">
+
 
 ### Project Structure
 
