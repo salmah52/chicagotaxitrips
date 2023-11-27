@@ -1,15 +1,15 @@
-# Chicago Taxi Trips dbt Project Documentation
+
 
 ## Project Title
-Creating an ELT Data Pipeline for Chicago Taxi Trips
+## Creating an ELT Data Pipeline for Chicago Taxi Trips
 
 ## Welcome to my Chicago Taxitrips ETL Pipeline
 
-This project focuses on building a comprehensive Extract, Load, Transform (ELT) data pipeline to collect information from the Chicago Data Portal's Taxi Trips dataset using its API. The extracted data is then loaded into a PostgreSQL database, transferred to a Google Cloud Storage (GCS) bucket, and finally moved to BigQuery.
+This project focuses on building a comprehensive Extract, Load, Transform (ELT) data pipeline to collect information from the Chicago Data Portal's Taxi Trips dataset using API. The extracted data is then loaded into a PostgreSQL database, transferred to a Google Cloud Storage (GCS) bucket, and finally moved to BigQuery.
 
 ## Data Architecture
 
-A robust data architecture is crucial for ensuring data quality, integrity, and accessibility. Here's the architecture for your Eviction Notices Data Pipeline:
+A robust data architecture is crucial for ensuring data quality, integrity, and accessibility. Here's the architecture for my Chicago Data Pipeline:
 
 ![Data Architecture](https://github.com/salmah52/chicagotaxitrips/assets/44398948/cd0f92d6-4158-408b-92c7-e9487eda8333")
 
@@ -78,6 +78,22 @@ This code defines an Airflow Directed Acyclic Graph (DAG) to orchestrate the dat
 
 - **Task Dependencies (`start_task >> extract_and_load_task >> end_task`):**
   - Specifies the order in which tasks should be executed. In this case, the DAG starts with `start_task`, followed by `extract_and_load_task`, and finally `end_task`.
+
+
+## Jobs Workflow
+
+![image](https://github.com/salmah52/chicagotaxitrips/assets/44398948/80d4d65b-4389-4dc7-af03-d5b3a2968778)
+
+GCS
+
+<img width="927" alt="image" src="https://github.com/salmah52/chicagotaxitrips/assets/44398948/71d78b2e-5ad1-4989-a393-78e4196f28a4">
+
+
+
+
+
+
+
 
 ## Transformation Layer and Analytics Modeling (dbt Implementation)
 
