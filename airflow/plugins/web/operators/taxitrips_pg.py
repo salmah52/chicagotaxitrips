@@ -19,7 +19,7 @@ class TaxitripsToPostgresOperator(BaseOperator):
         table: str = "taxitrips_data02",
         api_url: str = "https://data.cityofchicago.org/resource/",
         api_endpoint: str = "wrvz-psew.json",
-        max_results: int = 900000,
+        max_results: int = ,
         timeout: int = 900,
         retries: int = 0,
         retry_delay: timedelta = timedelta(minutes=5),
