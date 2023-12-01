@@ -203,17 +203,11 @@ These Metrics models provide valuable insights into revenue trends, average reve
 - **Custom Operator:**
   - The custom operator encapsulates the logic for data extraction and loading, promoting reusability and readability.
 
-- **Pandas DataFrame:**
-  - Leveraging Pandas allows for convenient data manipulation and transformation before loading it into PostgreSQL.
-
 - **Dynamic API Configuration:**
   - The operator is configurable, allowing users to specify API details, order, and other parameters during instantiation.
 
 - **Airflow DAG:**
   - The DAG orchestrates the entire process, defining the sequence of tasks to be executed.
-
-- **Docker-Ready:**
-  - This approach is containerization-friendly, ensuring easy deployment and scalability in a Dockerized environment.
 
 This design promotes modularity, making it easy to extend the pipeline for future stages and modifications. The DAG provides a visual representation of the workflow, making it comprehensible and adaptable to changing requirements.
 
