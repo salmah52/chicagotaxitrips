@@ -40,7 +40,7 @@ extract_and_load_task = TaxitripsToPostgresOperator(
     table='taxitrips_data02',  # Replace with your desired table name
     api_url='https://data.cityofchicago.org/resource/',
     api_endpoint='wrvz-psew.json',
-    max_results=900000,
+    max_results= ,
     timeout=900,
     retries=1,
     retry_delay=timedelta(minutes=5),
